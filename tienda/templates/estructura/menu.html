@@ -1,0 +1,206 @@
+{% comment %} {% load django_bootstrap5 %} {% endcomment %}
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="{% url 'index' %}">Tienda</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="">Inicio</a>
+                </li>
+
+                {% if perms.tienda.view_cliente %}
+                <li class="nav-item">
+                    <a class="nav-link" href="">Ver clientes</a>
+                </li>
+                {% endif %}
+
+                {% if perms.tienda.view_vendedor %}
+                <li class="nav-item">
+                    <a class="nav-link" href="">Ver vendedores</a>
+                </li>
+                {% endif %}
+
+                <!-- Dropdown de Piezas -->
+                {% if perms.tienda.view_pieza or perms.tienda.add_pieza %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="piezasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Catálogo de Piezas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="piezasDropdown">
+                        {% if perms.tienda.view_pieza %}
+                        <li><a class="dropdown-item" href="">Lista de catalogo de piezas</a></li>
+                        {% endif %}
+
+                        {% if perms.tienda.view_pieza %}
+                        <li><a class="dropdown-item" href="">Buscar piezas</a></li>
+                        {% endif %}
+
+                        {% if perms.tienda.view_pieza %}
+                        <li><a class="dropdown-item" href="">Búsqueda avanzada pieza</a></li>
+                        {% endif %}
+        
+                        {% if perms.tienda.add_pieza %}
+                        <li><a class="dropdown-item" href="">Crear pieza</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+                {% endif %}
+
+                <!-- Dropdown de Pedidos -->
+                {% if perms.tienda.view_pedido or perms.tienda.add_pedido %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="piezasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pedidos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="piezasDropdown">
+                        {% comment %} {% if perms.tienda.view_pieza %} {% endcomment %}
+                        <li><a class="dropdown-item" href="">Ver pedidos</a></li>
+                        {% comment %} {% endif %} {% endcomment %}
+
+                        {% comment %} {% if perms.tienda.view_pieza %} {% endcomment %}
+                        <li><a class="dropdown-item" href="">Crear un pedido</a></li>
+                        {% comment %} {% endif %} {% endcomment %}
+        
+       
+                    </ul>
+                </li>
+                {% endif %}
+                
+
+                <!-- Dropdown de Tienda -->
+                {% if perms.tienda.view_tienda or perms.tienda.add_tienda or perms.tienda.view_producto_tienda %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos disponibles en tienda
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="tiendaDropdown">
+                        {% if perms.tienda.view_tienda %}
+                        <li><a class="dropdown-item" href="">Ver tienda</a></li>
+                        {% endif %}
+        
+                        {% if perms.tienda.add_tienda %}
+                        <li><a class="dropdown-item" href="">Crear tienda</a></li>
+
+                        <li><a class="dropdown-item" href="">Agregar producto tienda</a></li>
+
+                        {% endif %}
+
+                        {% if perms.tienda.view_producto_tienda %}
+                        <li><a class="dropdown-item" href="">Listar productos de la tienda</a></li>
+                        {% endif %}
+
+
+
+
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+
+     
+
+
+            <!-- Contenedor derecho -->
+             <!--Carrito-->
+            <div class="d-flex align-items-center">
+                {% if request.user.is_authenticated and request.user.cliente %}
+                <a href="{% url 'listarLineaPedidoCarrito' request.user.cliente.id  %}" class="btn btn-outline-primary me-3 position-relative">
+                    <i class="bi bi-cart3 fs-4"></i>
+                    {% if carrito_cantidad and carrito_cantidad > 0 %}
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ carrito_cantidad }}
+                        </span> 
+                    {% endif %}
+                </a>
+
+                {% endif %}
+
+                {% if request.user.is_authenticated %}
+                <!-- Dropdown de Usuario -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark dropdown-toggle d-flex align-items-center" type="button" 
+                            id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle fs-4 me-2"></i>
+                        <span class="fw-semibold">{{ request.user }}</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="userDropdown">
+                        
+                        <!--Perfil cliente-->
+                        {% if request.user.rol == 2 %}
+                        <li>
+                            <a href="{% url 'perfil_cliente' request.user.cliente.id  %}" class="dropdown-item">
+                                <i class="bi bi-person me-2"></i> Perfil cliente
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        {% if request.user.rol == 3 %}
+                        <li>
+                            
+                            <a href="{% url 'perfil_vendedor' request.user.vendedor.id  %}" class="dropdown-item">
+                                <i class="bi bi-person me-2"></i> Perfil vendedor
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        
+                        <li class="dropdown-item text-muted text-wrap">
+                            <small>Sesión: {{ request.session.fecha_inicio }}</small>
+                        </li>
+                      
+
+                        <li class="dropdown-item">
+                            <small>
+                                Rol: 
+                                {% if request.user.rol == 1 %}
+                                    <strong>Administrador</strong>
+                                {% elif request.user.rol == 2 %}
+                                    <strong>Cliente</strong>
+                                {% elif request.user.rol == 3 %}
+                                    <strong>Vendedor</strong>
+                                {% else %}
+                                    <strong>No asignado</strong>
+                                {% endif %}
+                            </small>
+                        </li>
+
+
+
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form action="{% url 'logout' %}" method="POST" class="d-grid">
+                                {% csrf_token %}
+                                <button class="btn btn-danger w-100" type="submit">
+                                    <i class="bi bi-box-arrow-right me-2"></i>Salir
+                                </button>
+                            </form>
+
+                              
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if not request.user.is_authenticated %}
+                    <a class="btn btn-outline-warning me-2" href="">Login</a>
+                    <a class="btn btn-outline-warning" href="">Registrarse</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+{% endif %}
