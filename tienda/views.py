@@ -9,7 +9,7 @@ def index(request):
 
 def listar_pieza_api(request):
     headers= {
-        'Authorization': 'Bearer 2Jrcl9KE2TVxJ70AGr4YYjLR2UBHdD'
+        'Authorization': 'Bearer IpUM35wKSdi0lK0Lc16nlmEC0wa1ug'
     }
     
     #datos de la API
@@ -23,3 +23,6 @@ def listar_pieza_api(request):
     
     
 
+
+
+    
