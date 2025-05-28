@@ -16,7 +16,7 @@ def listar_productosTercero(request):
 @api_view(['GET'])
 def listar_productosTercero(request):
     headers= {
-        'Authorization': 'Bearer IpUM35wKSdi0lK0Lc16nlmEC0wa1ug'
+        'Authorization': 'Bearer uXeCuCqzq8w2MksxlV4DPBhfYzx8qU'
     }
     
     #datos de la API
