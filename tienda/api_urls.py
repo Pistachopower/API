@@ -4,6 +4,8 @@ from .api_views import *
 
 
 urlpatterns = [
-    path('listar-productos-tercero/', listar_productosTercero),
+    path('listar_productosTercero/', listar_productosTercero, name='listar_productosTercero'),
+    path('crear-producto-tercero/', crear_producto_tercero, name='crear_producto_tercero'),
+
 
 ]

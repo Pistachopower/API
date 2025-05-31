@@ -5,3 +5,9 @@ class ProductoTerceroSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductosTerceros
         fields = '__all__'
+        
+        
+class ProductoTerceroCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductosTerceros
+        fields = '__all__'
