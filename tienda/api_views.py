@@ -10,6 +10,7 @@ import requests
 from django.core import serializers
 from django.shortcuts import render
 
+from requests.exceptions import HTTPError
 
 
 @api_view(['GET'])
@@ -24,8 +25,22 @@ def crear_producto_tercero(request):
     productoTercero = ProductoTerceroCreateSerializer(data=request.data)
     
     if productoTercero.is_valid():
-        productoTercero.save()
-        return Response("Creado producto tercero")
+        try:
+            productoTercero.save()
+            return Response("Creado producto tercero")
+        
+        except serializers.ValidationError as error:
+            return Response(
+                error, status=status.HTTP_400_BAD_REQUEST
+            )
+            
+        except Exception as error:
+            return Response(
+                error, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+        
+        
+        
         
     else:
         return Response(
