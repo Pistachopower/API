@@ -19,6 +19,16 @@ def listar_productosTercero(request):
     serializer = ProductoTerceroSerializer(listaProductosTercero, many=True)
     return Response(serializer.data)
 
+
+@api_view(['GET']) 
+def obtener_producto(request,producto_id):
+    productos = ProductosTerceros.objects.all()
+    producto = productos.get(id=producto_id)   
+    serializer = ProductoTerceroSerializer(producto)
+    return Response(serializer.data)
+
+
+
 @api_view(['POST'])
 def crear_producto_tercero(request):
     
