@@ -46,3 +46,35 @@ def crear_producto_tercero(request):
         return Response(
             productoTercero.errors, status=status.HTTP_400_BAD_REQUEST
         )
+        
+@api_view(["PATCH"])   
+def editar_nombre_producto_tercero(request, producto_id):
+    producto = ProductosTerceros.objects.get(id=producto_id)
+    
+    productoSerializer = ProductoTerceroCreateSerializer(
+        producto, data=request.data, partial=True #partial: permite que puedas cambiar el valor de un atributo
+    )
+    if productoSerializer.is_valid():
+        try:
+            productoSerializer.save()
+            return Response("Producto editado correctamente")
+        except serializers.ValidationError as error:
+            return Response(error.detail, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as error:
+            return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    else:
+        return Response(
+            productoSerializer.errors, status=status.HTTP_400_BAD_REQUEST
+        )
+        
+
+
+#
+@api_view(["DELETE"])
+def eliminar_producto(request, producto_id):
+    producto = ProductosTerceros.objects.get(id=producto_id)
+    try:
+        producto.delete()
+        return Response("producto eliminado")
+    except Exception as error:
+        return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
