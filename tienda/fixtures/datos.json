@@ -3,11 +3,11 @@
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
-        "action_time": "2025-05-27T08:26:33.503Z",
+        "action_time": "2025-05-28T15:33:46.983Z",
         "user": 1,
         "content_type": 7,
         "object_id": "1",
-        "object_repr": "pan",
+        "object_repr": "Tornillo",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -16,11 +16,11 @@
     "model": "admin.logentry",
     "pk": 2,
     "fields": {
-        "action_time": "2025-05-27T08:26:45.651Z",
+        "action_time": "2025-05-28T15:37:03.962Z",
         "user": 1,
-        "content_type": 7,
-        "object_id": "2",
-        "object_repr": "jamon",
+        "content_type": 3,
+        "object_id": "1",
+        "object_repr": "clientes",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -29,13 +29,13 @@
     "model": "admin.logentry",
     "pk": 3,
     "fields": {
-        "action_time": "2025-05-27T08:28:41.229Z",
+        "action_time": "2025-05-28T15:37:16.866Z",
         "user": 1,
-        "content_type": 7,
-        "object_id": "3",
-        "object_repr": "aceite",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
+        "content_type": 3,
+        "object_id": "1",
+        "object_repr": "clientes",
+        "action_flag": 3,
+        "change_message": ""
     }
 },
 {
@@ -291,11 +291,191 @@
     }
 },
 {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add application",
+        "content_type": 8,
+        "codename": "add_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change application",
+        "content_type": 8,
+        "codename": "change_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete application",
+        "content_type": 8,
+        "codename": "delete_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view application",
+        "content_type": 8,
+        "codename": "view_application"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add access token",
+        "content_type": 9,
+        "codename": "add_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change access token",
+        "content_type": 9,
+        "codename": "change_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete access token",
+        "content_type": 9,
+        "codename": "delete_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view access token",
+        "content_type": 9,
+        "codename": "view_accesstoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add grant",
+        "content_type": 10,
+        "codename": "add_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change grant",
+        "content_type": 10,
+        "codename": "change_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete grant",
+        "content_type": 10,
+        "codename": "delete_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view grant",
+        "content_type": 10,
+        "codename": "view_grant"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add refresh token",
+        "content_type": 11,
+        "codename": "add_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change refresh token",
+        "content_type": 11,
+        "codename": "change_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete refresh token",
+        "content_type": 11,
+        "codename": "delete_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view refresh token",
+        "content_type": 11,
+        "codename": "view_refreshtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add id token",
+        "content_type": 12,
+        "codename": "add_idtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change id token",
+        "content_type": 12,
+        "codename": "change_idtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete id token",
+        "content_type": 12,
+        "codename": "delete_idtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view id token",
+        "content_type": 12,
+        "codename": "view_idtoken"
+    }
+},
+{
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$870000$7Pa4vFoONxD0YhZgVTHEus$I3QOXNa936Ll0meqeFlI+ydVI2GDiJOJBVAkWqcf2e4=",
-        "last_login": "2025-05-27T08:22:27.426Z",
+        "password": "pbkdf2_sha256$870000$h9mXOHzWyzcLIlYJzKwBWG$6wE4xD/cA0T+AHzdF3DN1QurkKNWz9QVDsBp02ZWdtM=",
+        "last_login": "2025-05-30T15:57:01.877Z",
         "is_superuser": true,
         "username": "nelson",
         "first_name": "",
@@ -303,7 +483,7 @@
         "email": "",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2025-05-27T08:21:13.628Z",
+        "date_joined": "2025-05-28T15:20:39.434Z",
         "groups": [],
         "user_permissions": []
     }
@@ -365,35 +545,274 @@
     }
 },
 {
-    "model": "sessions.session",
-    "pk": "28wcq8a36xjol4byq4vvsrxmzxh3bj15",
+    "model": "contenttypes.contenttype",
+    "pk": 8,
     "fields": {
-        "session_data": ".eJxVjEEOwiAQRe_C2pAyFWRcuu8ZyMCAVA0kpV0Z7y5NutDtf-_9t3C0rdltLS5uZnEVSpx-N0_hGcsO-EHlXmWoZV1mL3dFHrTJqXJ83Q737yBTy73WYTCskseEo0GVkkHLNiIB8EXzGAkipdBx8KBxAOs1whkUazS9Ep8v9TQ4LA:1uJpZr:aSs9rkk-Px6L3rGuLFqFKQZhUnE3_jicv-eW-5kfGIk",
-        "expire_date": "2025-06-10T08:22:27.430Z"
+        "app_label": "oauth2_provider",
+        "model": "application"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "accesstoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "grant"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "refreshtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "oauth2_provider",
+        "model": "idtoken"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7i8j8yzrkxz1edv44m2gewtji5rtjoic",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAYCnZcuu8ZyAxMpGogKe3KeHdt0oVu_3vvv1SkbS1x67LEOauLsur0uzGlh9Qd5DvVW9Op1XWZWe-KPmjXU8vyvB7u30GhXr618WjREDLCmYJ4GNB7MtaBM8KeEhnnwRoCoQA4AKYkYXQwMnIAUO8Prwc2mQ:1uKIaI:vY5SoBSpouA8vOaW1dTfeXs0HgKrbQ0KogJn0Cas2SM",
+        "expire_date": "2025-06-11T15:20:50.309Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "g01rk6yimca42acpatqst5bvwagkp6d9",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAYCnZcuu8ZyAxMpGogKe3KeHdt0oVu_3vvv1SkbS1x67LEOauLsur0uzGlh9Qd5DvVW9Op1XWZWe-KPmjXU8vyvB7u30GhXr618WjREDLCmYJ4GNB7MtaBM8KeEhnnwRoCoQA4AKYkYXQwMnIAUO8Prwc2mQ:1uL26P:r90FyGkvAIBdGsVAyEWBtGiMjBXShdDC2sjW6j4g4lE",
+        "expire_date": "2025-06-13T15:57:01.886Z"
     }
 },
 {
     "model": "tienda.productosterceros",
     "pk": 1,
     "fields": {
-        "nombre": "pan",
-        "precio": 5.0
+        "nombre": "Tornillo",
+        "precio": 5.5,
+        "vendedor": null
     }
 },
 {
     "model": "tienda.productosterceros",
     "pk": 2,
     "fields": {
-        "nombre": "jamon",
-        "precio": 7.0
+        "nombre": "aceite",
+        "precio": 1.0,
+        "vendedor": null
     }
 },
 {
     "model": "tienda.productosterceros",
     "pk": 3,
     "fields": {
-        "nombre": "aceite",
-        "precio": 2.0
+        "nombre": "lunas",
+        "precio": 15.0,
+        "vendedor": null
+    }
+},
+{
+    "model": "tienda.productosterceros",
+    "pk": 4,
+    "fields": {
+        "nombre": "faro",
+        "precio": 50.4,
+        "vendedor": null
+    }
+},
+{
+    "model": "tienda.productosterceros",
+    "pk": 9,
+    "fields": {
+        "nombre": "Transformer",
+        "precio": 48.5,
+        "vendedor": 3
+    }
+},
+{
+    "model": "oauth2_provider.application",
+    "pk": 1,
+    "fields": {
+        "client_id": "tienda",
+        "user": 1,
+        "redirect_uris": "",
+        "post_logout_redirect_uris": "",
+        "client_type": "confidential",
+        "authorization_grant_type": "password",
+        "client_secret": "tienda",
+        "hash_client_secret": false,
+        "name": "tienda",
+        "skip_authorization": false,
+        "created": "2025-05-28T15:22:04.822Z",
+        "updated": "2025-05-30T15:57:58.188Z",
+        "algorithm": "",
+        "allowed_origins": ""
+    }
+},
+{
+    "model": "oauth2_provider.accesstoken",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "source_refresh_token": null,
+        "token": "lHbR9xozpBx9JEk33IZxb34QAyhCkf",
+        "token_checksum": "8b4be24134c07a5eb501e52209057ba912612add71e79ca6d2bbc4a900423f98",
+        "id_token": null,
+        "application": 1,
+        "expires": "2183-11-07T00:21:00.492Z",
+        "scope": "read write groups",
+        "created": "2025-05-28T15:27:40.492Z",
+        "updated": "2025-05-28T15:27:40.492Z"
+    }
+},
+{
+    "model": "oauth2_provider.accesstoken",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "source_refresh_token": null,
+        "token": "uXeCuCqzq8w2MksxlV4DPBhfYzx8qU",
+        "token_checksum": "02b2728ecc515011a5145f89af047cbc7359db1a6ef428da4a747d41bcab75b8",
+        "id_token": null,
+        "application": 1,
+        "expires": "2183-11-07T00:28:12.040Z",
+        "scope": "read write groups",
+        "created": "2025-05-28T15:34:52.042Z",
+        "updated": "2025-05-28T15:34:52.042Z"
+    }
+},
+{
+    "model": "oauth2_provider.accesstoken",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "source_refresh_token": null,
+        "token": "dulmwogNLx4iwVhfpZBTXR1RtTkq3g",
+        "token_checksum": "77d67ed54f3b77f6b7cc20222d4defda0ebaf22dbd49f772406a5b15606d224f",
+        "id_token": null,
+        "application": 1,
+        "expires": "2183-11-09T00:53:20.382Z",
+        "scope": "read write groups",
+        "created": "2025-05-30T16:00:00.383Z",
+        "updated": "2025-05-30T16:00:00.383Z"
+    }
+},
+{
+    "model": "oauth2_provider.accesstoken",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "source_refresh_token": null,
+        "token": "L9eQiozaBqE9rOhLPjl1Wte3StPBzW",
+        "token_checksum": "3db092121ca69753dbf6cbd9629b047507d6b0abd55b384ece17e34b59d98e26",
+        "id_token": null,
+        "application": 1,
+        "expires": "2183-11-12T01:52:20.434Z",
+        "scope": "read write groups",
+        "created": "2025-06-02T16:59:00.436Z",
+        "updated": "2025-06-02T16:59:00.436Z"
+    }
+},
+{
+    "model": "oauth2_provider.accesstoken",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "source_refresh_token": null,
+        "token": "5cNtVstb83HtyRUBEQg0w6H62EqEob",
+        "token_checksum": "c3654b09eda23e54b2f5cb6cf858e3771d8c0110af2dbcf8f6d3ebf8ade32bd4",
+        "id_token": null,
+        "application": 1,
+        "expires": "2183-11-14T00:39:29.141Z",
+        "scope": "read write groups",
+        "created": "2025-06-04T15:46:09.143Z",
+        "updated": "2025-06-04T15:46:09.143Z"
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "token": "gyrA37EqgwhmJMbEnUZHZzuUpA7Mk8",
+        "application": 1,
+        "access_token": 1,
+        "token_family": "e3e6fa28-0b0e-47f8-8236-e0e813fe8aab",
+        "created": "2025-05-28T15:27:40.493Z",
+        "updated": "2025-05-28T15:27:40.493Z",
+        "revoked": null
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "token": "79lPfRJZt4zQHpc58Aoks9xSTq5jok",
+        "application": 1,
+        "access_token": 2,
+        "token_family": "0f1d2a5d-cff2-4d76-8741-6f118c1be9f3",
+        "created": "2025-05-28T15:34:52.043Z",
+        "updated": "2025-05-28T15:34:52.043Z",
+        "revoked": null
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "token": "g52wwbEHDYgHP4igVcfMVqMkEHGyxt",
+        "application": 1,
+        "access_token": 3,
+        "token_family": "bd2b31d7-e119-43ae-b910-74174d7f1a7f",
+        "created": "2025-05-30T16:00:00.384Z",
+        "updated": "2025-05-30T16:00:00.384Z",
+        "revoked": null
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "token": "OxHZHQfQCKoq76XdO35HYQ7PW5sKRh",
+        "application": 1,
+        "access_token": 4,
+        "token_family": "ed86bcfb-3b7e-48c6-a582-cf525bf6843f",
+        "created": "2025-06-02T16:59:00.437Z",
+        "updated": "2025-06-02T16:59:00.437Z",
+        "revoked": null
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "token": "nkSN0OZKwNWyIetQhcLjdjcxfUPmO6",
+        "application": 1,
+        "access_token": 5,
+        "token_family": "72c812bb-d3b0-4915-8596-7cc0f4b1def3",
+        "created": "2025-06-04T15:46:09.149Z",
+        "updated": "2025-06-04T15:46:09.149Z",
+        "revoked": null
     }
 }
 ]

@@ -61,7 +61,7 @@ def crear_producto_tercero(request):
 def editar_nombre_producto_tercero(request, producto_id):
     producto = ProductosTerceros.objects.get(id=producto_id)
     
-    productoSerializer = ProductoTerceroCreateSerializer(
+    productoSerializer = ProductoTerceroActualizarSerializer(
         producto, data=request.data, partial=True #partial: permite que puedas cambiar el valor de un atributo
     )
     if productoSerializer.is_valid():
