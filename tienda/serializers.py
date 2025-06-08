@@ -55,11 +55,11 @@ class ProductoTerceroActualizarSerializer(serializers.ModelSerializer):
         return nombre
     
     #self: mi registro de la bd
-    def validate(self, nombreFormularioCliente):
+    def validate(self, data):
         
         if self.instance:
-            nuevo_nombre = nombreFormularioCliente.get('nombre')
-            vendedor = nombreFormularioCliente.get('vendedor', self.instance.vendedor)
+            nuevo_nombre = data.get('nombre')
+            vendedor = data.get('vendedor', self.instance.vendedor)
            
             if nuevo_nombre and nuevo_nombre != self.instance.nombre:
                 
@@ -67,7 +67,7 @@ class ProductoTerceroActualizarSerializer(serializers.ModelSerializer):
                     raise serializers.ValidationError(
                         {"nombre": "No puedes cambiar el nombre si no eres el propietario actual."}
                     )
-        return nombreFormularioCliente
+        return data
         
         
         

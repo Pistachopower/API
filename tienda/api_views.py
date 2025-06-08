@@ -79,10 +79,24 @@ def editar_nombre_producto_tercero(request, producto_id):
         
 
 
-#
+# @api_view(["DELETE"])
+# def eliminar_producto(request, producto_id):
+#     producto = ProductosTerceros.objects.get(id=producto_id)
+#     try:
+#         producto.delete()
+#         return Response("producto eliminado")
+#     except Exception as error:
+#         return Response(repr(error), status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 @api_view(["DELETE"])
 def eliminar_producto(request, producto_id):
     producto = ProductosTerceros.objects.get(id=producto_id)
+    # Verifica si el usuario autenticado es el creador
+    if producto.vendedor != request.user:
+        return Response(
+            {"error": "No tienes permiso para eliminar este producto."},
+            status=status.HTTP_403_FORBIDDEN
+        )
     try:
         producto.delete()
         return Response("producto eliminado")
