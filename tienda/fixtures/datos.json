@@ -39,6 +39,19 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2025-06-05T17:19:45.850Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "neumático bueno",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -475,7 +488,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$870000$h9mXOHzWyzcLIlYJzKwBWG$6wE4xD/cA0T+AHzdF3DN1QurkKNWz9QVDsBp02ZWdtM=",
-        "last_login": "2025-05-30T15:57:01.877Z",
+        "last_login": "2025-06-08T20:50:20.044Z",
         "is_superuser": true,
         "username": "nelson",
         "first_name": "",
@@ -610,6 +623,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "8h7ivow63es3c3l7jvlc63a1dpkdney1",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAYCnZcuu8ZyAxMpGogKe3KeHdt0oVu_3vvv1SkbS1x67LEOauLsur0uzGlh9Qd5DvVW9Op1XWZWe-KPmjXU8vyvB7u30GhXr618WjREDLCmYJ4GNB7MtaBM8KeEhnnwRoCoQA4AKYkYXQwMnIAUO8Prwc2mQ:1uOMyC:74CCen5K--GWNgNC0yIMqHwrhokM-fUUU4mc295uZqc",
+        "expire_date": "2025-06-22T20:50:20.054Z"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "g01rk6yimca42acpatqst5bvwagkp6d9",
     "fields": {
         "session_data": ".eJxVjEEOwiAQRe_C2hAYCnZcuu8ZyAxMpGogKe3KeHdt0oVu_3vvv1SkbS1x67LEOauLsur0uzGlh9Qd5DvVW9Op1XWZWe-KPmjXU8vyvB7u30GhXr618WjREDLCmYJ4GNB7MtaBM8KeEhnnwRoCoQA4AKYkYXQwMnIAUO8Prwc2mQ:1uL26P:r90FyGkvAIBdGsVAyEWBtGiMjBXShdDC2sjW6j4g4lE",
@@ -617,12 +638,11 @@
     }
 },
 {
-    "model": "tienda.productosterceros",
-    "pk": 1,
+    "model": "sessions.session",
+    "pk": "lz8kee0gs6y3k2qum7m0j4z1sdepapxb",
     "fields": {
-        "nombre": "Tornillo",
-        "precio": 5.5,
-        "vendedor": null
+        "session_data": ".eJxVjEEOwiAQRe_C2hAYCnZcuu8ZyAxMpGogKe3KeHdt0oVu_3vvv1SkbS1x67LEOauLsur0uzGlh9Qd5DvVW9Op1XWZWe-KPmjXU8vyvB7u30GhXr618WjREDLCmYJ4GNB7MtaBM8KeEhnnwRoCoQA4AKYkYXQwMnIAUO8Prwc2mQ:1uNEFW:Mu6Le6cs5sE18sZ7PKG2XPlpryyNeNs2z1qGS2Yyn6E",
+        "expire_date": "2025-06-19T17:19:30.917Z"
     }
 },
 {
@@ -659,6 +679,33 @@
         "nombre": "Tornillo",
         "precio": 50.5,
         "vendedor": null
+    }
+},
+{
+    "model": "tienda.productosterceros",
+    "pk": 9,
+    "fields": {
+        "nombre": "Transformer",
+        "precio": 48.5,
+        "vendedor": 3
+    }
+},
+{
+    "model": "tienda.productosterceros",
+    "pk": 11,
+    "fields": {
+        "nombre": "Volante",
+        "precio": 57.5,
+        "vendedor": 5
+    }
+},
+{
+    "model": "tienda.productosterceros",
+    "pk": 12,
+    "fields": {
+        "nombre": "Correas",
+        "precio": 52.5,
+        "vendedor": 5
     }
 },
 {
@@ -778,6 +825,22 @@
     }
 },
 {
+    "model": "oauth2_provider.accesstoken",
+    "pk": 7,
+    "fields": {
+        "user": 1,
+        "source_refresh_token": null,
+        "token": "y10KqCW7ajqPQQXpTYH39zzR3a0ff3",
+        "token_checksum": "be5cd9582fffc851e764459b56e9b4edd8485ecdb41c2495b21bd0655d572b3a",
+        "id_token": null,
+        "application": 1,
+        "expires": "2183-11-16T04:34:54.119Z",
+        "scope": "read write groups",
+        "created": "2025-06-06T19:41:34.120Z",
+        "updated": "2025-06-06T19:41:34.120Z"
+    }
+},
+{
     "model": "oauth2_provider.refreshtoken",
     "pk": 1,
     "fields": {
@@ -858,6 +921,20 @@
         "token_family": "fa0f357f-60aa-4389-9316-410a69dc8f3d",
         "created": "2025-06-05T07:40:41.420Z",
         "updated": "2025-06-05T07:40:41.420Z",
+        "revoked": null
+    }
+},
+{
+    "model": "oauth2_provider.refreshtoken",
+    "pk": 7,
+    "fields": {
+        "user": 1,
+        "token": "bi4NheKoQ8BdxCWOXqGDFFQEj8fCSF",
+        "application": 1,
+        "access_token": 7,
+        "token_family": "d8b89e37-f874-47e8-9df8-4933a283f549",
+        "created": "2025-06-06T19:41:34.122Z",
+        "updated": "2025-06-06T19:41:34.122Z",
         "revoked": null
     }
 }
